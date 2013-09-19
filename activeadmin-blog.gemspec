@@ -20,4 +20,11 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+
+  spec.add_dependency "friendly_id"
+  spec.add_dependency "activeadmin"
+  spec.add_dependency "activeadmin-gallery"
+  spec.add_dependency "activeadmin-wysihtml5"
+  spec.add_dependency "activeadmin-extra"
 end
+
