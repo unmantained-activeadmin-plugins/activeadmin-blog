@@ -26,7 +26,7 @@ module Blog
 
     attr_accessible :category_id, :author_id, :title, :abstract, :body, :sticky,
                     :visible, :published_at, :seo_slug, :seo_title, :seo_description,
-                    :comma_separated_tags
+                    :comma_separated_tags, :related_post_ids
 
     def seo_slug
       slug
