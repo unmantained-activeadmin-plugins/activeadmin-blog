@@ -8,11 +8,9 @@ module Blog
     validates :name, uniqueness: true
 
     extend FriendlyId
-    friendly_id :name, use: :slugged
+    friendly_id :name, use: [:slugged, :finders]
 
     scope :sorted_alphabetically, -> { order('name') }
-
-    attr_accessible :name, :description
   end
 end
 
