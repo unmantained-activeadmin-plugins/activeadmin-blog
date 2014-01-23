@@ -8,8 +8,6 @@ module Blog
 
     scope :sorted_alphabetically, -> { order('first_name, last_name') }
 
-    attr_accessible :first_name, :last_name, :bio
-
     def full_name
       [ first_name, last_name ].join(" ")
     end

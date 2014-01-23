@@ -14,7 +14,7 @@ module Blog
     validate :check_presence_of_featured_image_if_sticky
 
     extend FriendlyId
-    friendly_id :seo_slug_or_title, use: :slugged
+    friendly_id :seo_slug_or_title, use: [:slugged, :finders]
 
     scope :sorted_by_date, -> { order('published_at DESC') }
     scope :sticky, -> { where(sticky: true) }
@@ -23,10 +23,6 @@ module Blog
     scope :published, -> { visible.where('published_at < ?', Time.now) }
 
     has_image :featured_image
-
-    attr_accessible :category_id, :author_id, :title, :abstract, :body, :sticky,
-                    :visible, :published_at, :seo_slug, :seo_title, :seo_description,
-                    :comma_separated_tags, :related_post_ids
 
     def seo_slug
       slug
