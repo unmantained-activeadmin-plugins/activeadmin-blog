@@ -1,6 +1,7 @@
 ActiveAdmin.register Blog::Author do
   menu parent: "Blog", label: "Authors"
-
+  permit_params :first_name, :last_name, :bio
+    
   index do
     column :first_name
     column :last_name
