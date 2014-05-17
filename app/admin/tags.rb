@@ -1,6 +1,7 @@
 ActiveAdmin.register Blog::Tag do
   menu parent: "Blog", label: "Tags"
-
+  permit_params :name, :trending, :description
+    
   index do
     column :name
     column :trending
