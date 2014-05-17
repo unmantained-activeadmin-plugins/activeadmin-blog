@@ -1,6 +1,7 @@
 ActiveAdmin.register Blog::Category do
   menu parent: "Blog", label: "Categories"
-
+  permit_params :name, :description
+    
   index do
     column :name
     default_actions
