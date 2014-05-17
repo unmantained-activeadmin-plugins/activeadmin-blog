@@ -1,5 +1,8 @@
 ActiveAdmin.register Blog::Post do
   menu parent: "Blog", label: "Posts"
+  permit_params :title, :author_name, :visible, :sticky, :published_at, :category_id, :author_id, 
+                :abstract, :body, :comma_seperated_tags, :related_posts, :featured_image, 
+                :seo_slug, :seo_title, :seo_description
 
   index do
     column :title
